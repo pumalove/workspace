@@ -42,7 +42,7 @@ public class PersonFragmentTest extends Fragment {
        
        list.setAdapter(new MyAdapter());
        
-       
+       //Yoloswag
        
        return list;
 	}
@@ -62,7 +62,7 @@ public class PersonFragmentTest extends Fragment {
         @Override
         public Object getRowItem(int section, int row) {
             return null;
-        }
+        }	
 
         @Override
         public boolean hasSectionHeaderView(int section) {

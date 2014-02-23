@@ -1,1 +1,0 @@
-Scanne strekkoder

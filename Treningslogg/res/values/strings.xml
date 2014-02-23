@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Treningslogg</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">TreningsLogg</string>
+    <string name="promt">VELG ØVELSE</string>
+
+</resources>

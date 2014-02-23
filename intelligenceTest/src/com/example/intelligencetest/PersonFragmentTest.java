@@ -1,14 +1,19 @@
 package com.example.intelligencetest;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.TreeMap;
+
 import com.applidium.headerlistview.HeaderListView;
 import com.applidium.headerlistview.SectionAdapter;
+import com.example.intelligencetest.R.id;
 
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.os.AsyncTask;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,53 +21,60 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 
-public class PersonFragmentTest extends Fragment {
-	 private ProgressDialog pDialog;
-	String[] values = new String[] { "Android List View", 
-            "Adapter implementation",
-            "Simple List View In Android",
-            "Create List View Android", 
-            "Android Example", 
-            "List View Source Code", 
-            "List View Array Adapter", 
-            "Android Example List View" 
-           };
+
+public class PersonFragmentTest extends Fragment {	
+	public static String LOGTAG = "PersonFragment";
 	
 	
-	List<Person> personList;
+	Locale locale = Locale.getDefault();
 	
+	List<Person> personList = new ArrayList<Person>();		
+	List<Character> sections;
+	PersonDatasource persondata;
+	Person[][] personArray;
+	
+	public PersonFragmentTest() {
+	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		LongOperation MyTask= new LongOperation();
-        MyTask.execute();
-       HeaderListView list = new HeaderListView(getActivity());
-       list.getListView();
-       
-       list.setAdapter(new MyAdapter());
-       
-       //Yoloswag
-       
-       return list;
+		int counter = 0;
+		Log.i(LOGTAG, "onCreateView : " + counter++);
+		
+		persondata = new PersonDatasource();
+		sections = persondata.getSections();
+
+		
+		personArray = persondata.getPersonArray();
+		
+		HeaderListView list = new HeaderListView(getActivity());
+		list.setAdapter(new MyAdapter());
+		
+		
+		
+		return list;
 	}
 	
-	
-	public class MyAdapter extends SectionAdapter {
 
-        public int numberOfSections() {
-            return 4;
+	public class MyAdapter extends SectionAdapter {
+		
+		
+		@Override
+        public int numberOfSections() {   
+        	return sections.size();
         }
 
+        
         @Override
         public int numberOfRows(int section) {
-            return 35;
+	        return personArray[section].length;
         }
 
         @Override
         public Object getRowItem(int section, int row) {
             return null;
-        }	
+        }
 
         @Override
         public boolean hasSectionHeaderView(int section) {
@@ -76,7 +88,10 @@ public class PersonFragmentTest extends Fragment {
                 convertView = getActivity().getLayoutInflater().inflate(R.layout.simple_list_item_1, null);
             }
             TextView tv = (TextView) convertView.findViewById(R.id.personName);
-            tv.setText("section: " + section + " row: " + row);
+            if(personArray[section][row] != null) {
+            	tv.setText("Name: " + personArray[section][row].getLastname() + ", " + personArray[section][row].getFirstname());
+            }
+            
             return convertView;
         }
 
@@ -92,56 +107,17 @@ public class PersonFragmentTest extends Fragment {
 
         @Override
         public View getSectionHeaderView(int section, View convertView, ViewGroup parent) {
-
+        	Log.i(LOGTAG, "getSectionHeaderView");
             if (convertView == null) {
                 convertView = getActivity().getLayoutInflater().inflate(R.layout.person_list_section_divider, null);
             }
 
             TextView text = (TextView) convertView.findViewById(R.id.dividerText);
-            text.setText("Header for section: " + section);
+            text.setText(String.valueOf(String.valueOf(sections.get(section))).toUpperCase(locale));
             
             return convertView;
         }
 	}
-	public class LongOperation extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected String doInBackground(String... params) {
-            for (int i = 0; i < 5; i++) {
-                try {
-                    Thread.sleep(1000);
-                   
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            return "Executed";
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            //TextView txt = (TextView) findViewById(R.id.output);
-            //txt.setText("Executed"); // txt.setText(result);
-            // might want to change "executed" for the returned string passed
-            // into onPostExecute() but that is upto you
-        	 pDialog.dismiss();
-        }
-
-        @Override
-        protected void onPreExecute() {
-        	super.onPreExecute();
-            pDialog = new ProgressDialog(getActivity());
-            pDialog.setMessage("Oppdaterer personlist...");
-            pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
-            pDialog.show();
-        }
-
-        @Override
-        protected void onProgressUpdate(Void... values) {}
-    }
-	//End async
-	
 	
 
 }

@@ -2,6 +2,7 @@ package com.example.intelligencetest;
 
 import java.util.Locale;
 
+import com.example.scanner.GridMenu;
 import com.example.scanner.Scan;
 
 import android.app.ActionBar;
@@ -128,7 +129,7 @@ public class MainActivity extends FragmentActivity implements
 				fragment = new PersonFragmentTest();
 			}
 			else if(position == 1) {
-				fragment = new Scan();
+				fragment = new GridMenu();
 			}else {				
 				fragment = new DummySectionFragment();
 			}

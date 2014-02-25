@@ -1,4 +1,4 @@
-package com.example.intelligencetest;
+package com.example.intelligencetest.persons;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,16 @@ import java.util.TreeMap;
 
 import com.applidium.headerlistview.HeaderListView;
 import com.applidium.headerlistview.SectionAdapter;
+import com.example.intelligencetest.R;
 import com.example.intelligencetest.R.id;
+import com.example.intelligencetest.R.layout;
 
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnDismissListener;
+import android.os.AsyncTask;
+import android.os.AsyncTask.Status;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -25,13 +32,15 @@ import android.widget.TextView;
 public class PersonFragmentTest extends Fragment {	
 	public static String LOGTAG = "PersonFragment";
 	
-	
+	MyAdapter adapter = new MyAdapter();
 	Locale locale = Locale.getDefault();
-	
+	Boolean finished;
 	List<Person> personList = new ArrayList<Person>();		
 	List<Character> sections;
 	PersonDatasource persondata;
 	Person[][] personArray;
+	ProgressDialog pDialog;
+	HeaderListView list;
 	
 	public PersonFragmentTest() {
 	}
@@ -39,24 +48,55 @@ public class PersonFragmentTest extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		int counter = 0;
-		Log.i(LOGTAG, "onCreateView : " + counter++);
+		finished = false;
 		
 		persondata = new PersonDatasource();
+		
+		
+		DatabaseOperation dbOper = new DatabaseOperation();
+		dbOper.execute();
+		
+		
 		sections = persondata.getSections();
-
-		
 		personArray = persondata.getPersonArray();
-		
-		HeaderListView list = new HeaderListView(getActivity());
-		list.setAdapter(new MyAdapter());
-		
+		list = new HeaderListView(getActivity());
+		list.setAdapter(adapter);
 		
 		
 		return list;
 	}
 	
+	public class DatabaseOperation extends AsyncTask<String, Void, String> {
 
+		@Override
+		protected String doInBackground(String... params) {
+			persondata.getData();
+			return "Executed";
+		}
+		
+		@Override
+		protected void onPostExecute(String result) {
+			// TODO Auto-generated method stub
+			super.onPostExecute(result);
+				pDialog.dismiss();
+				sections = persondata.getSections();
+				personArray = persondata.getPersonArray();
+				adapter.notifyDataSetChanged();
+		}
+		
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();			
+            pDialog = new ProgressDialog(getActivity());
+            pDialog.setMessage("Oppdaterer personlist...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();
+		}
+		
+		
+	}
+	
 	public class MyAdapter extends SectionAdapter {
 		
 		

@@ -2,6 +2,7 @@ package com.example.intelligencetest;
 
 import java.util.Locale;
 
+import com.example.intelligencetest.persons.PersonFragmentTest;
 import com.example.scanner.Scan;
 
 import android.app.ActionBar;

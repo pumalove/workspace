@@ -56,11 +56,12 @@ public class PersonFragmentTest extends Fragment {
 		DatabaseOperation dbOper = new DatabaseOperation();
 		dbOper.execute();
 		
+//		
+//		sections = persondata.getSections();
+//		personArray = persondata.getPersonArray();
 		
-		sections = persondata.getSections();
-		personArray = persondata.getPersonArray();
 		list = new HeaderListView(getActivity());
-		list.setAdapter(adapter);
+		//list.setAdapter(adapter);
 		
 		
 		return list;
@@ -81,7 +82,8 @@ public class PersonFragmentTest extends Fragment {
 				pDialog.dismiss();
 				sections = persondata.getSections();
 				personArray = persondata.getPersonArray();
-				adapter.notifyDataSetChanged();
+				list.setAdapter(adapter);
+				//adapter.notifyDataSetChanged();
 		}
 		
 		@Override

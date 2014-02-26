@@ -1,4 +1,4 @@
-package com.example.intelligencetest;
+package com.example.intelligencetest.persons;
 
 import java.util.ArrayList;
 import java.util.List;

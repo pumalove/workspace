@@ -2,6 +2,7 @@ package com.example.intelligencetest;
 
 import java.util.Locale;
 
+import com.example.intelligencetest.persons.PersonFragmentTest;
 import com.example.scanner.GridMenu;
 import com.example.scanner.Scan;
 
@@ -60,6 +61,7 @@ public class MainActivity extends FragmentActivity implements
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
+		mViewPager.setOffscreenPageLimit(3);
 
 		// When swiping between different sections, select the corresponding
 		// tab. We can also use ActionBar.Tab#select() to do this if we have

@@ -1,4 +1,4 @@
-package com.example.intelligencetest;
+package com.example.intelligencetest.persons;
 
 public class Person {
 	

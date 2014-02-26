@@ -4,15 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.intelligencetest.R;
 
@@ -28,6 +32,18 @@ public class GridMenu extends Fragment
     	        
         GridView gridView = (GridView)view.findViewById(R.id.gridview);
         gridView.setAdapter(new MyAdapter(getActivity()));
+        gridView.setOnItemClickListener(new OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+               // Toast.makeText(getActivity(), "" + position, Toast.LENGTH_SHORT).show();
+                
+                switch(position){
+                case 0: Intent i = new Intent(getActivity(), ScanActivity.class);
+        		startActivity(i);;
+                break;
+                
+                }
+            }
+        });
 		return gridView;
     }
 
@@ -40,11 +56,11 @@ public class GridMenu extends Fragment
         {
             inflater = LayoutInflater.from(context);
 
-            items.add(new Item("Image 1", R.drawable.sample_0));
-            items.add(new Item("Image 2", R.drawable.sample_1));
-            items.add(new Item("Image 3", R.drawable.sample_2));
-            items.add(new Item("Image 4", R.drawable.sample_3));
-            items.add(new Item("Image 5", R.drawable.sample_4));
+            items.add(new Item("Scan", R.drawable.sample_0));
+            items.add(new Item("Library", R.drawable.sample_1));
+            items.add(new Item("Call", R.drawable.sample_2));
+            items.add(new Item("Chemical", R.drawable.sample_3));
+            items.add(new Item("Swag 16", R.drawable.sample_4));
         }
 
         @Override

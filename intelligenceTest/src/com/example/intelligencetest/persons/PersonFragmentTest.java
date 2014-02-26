@@ -1,4 +1,4 @@
-package com.example.intelligencetest;
+package com.example.intelligencetest.persons;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,9 @@ import java.util.TreeMap;
 
 import com.applidium.headerlistview.HeaderListView;
 import com.applidium.headerlistview.SectionAdapter;
+import com.example.intelligencetest.R;
 import com.example.intelligencetest.R.id;
+import com.example.intelligencetest.R.layout;
 
 
 import android.os.Bundle;

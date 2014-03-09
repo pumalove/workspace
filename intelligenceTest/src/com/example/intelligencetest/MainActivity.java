@@ -5,7 +5,10 @@ import java.util.Locale;
 import com.example.intelligencetest.persons.PersonFragmentTest;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.example.scanner.GridMenu;
+=======
+>>>>>>> e88a3d62ccc71778191b053326b4db9669dd3600
 =======
 >>>>>>> e88a3d62ccc71778191b053326b4db9669dd3600
 =======

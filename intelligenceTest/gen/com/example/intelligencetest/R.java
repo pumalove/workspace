@@ -26,6 +26,7 @@ public final class R {
         public static final int ic_contact_picture=0x7f020001;
         public static final int ic_launcher=0x7f020002;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int sample_0=0x7f020003;
         public static final int sample_1=0x7f020004;
         public static final int sample_2=0x7f020005;
@@ -36,6 +37,11 @@ public final class R {
         public static final int sample_7=0x7f02000a;
         public static final int scrollbar_handle_holo_dark=0x7f02000b;
         public static final int scrollbar_handle_holo_light=0x7f02000c;
+=======
+        public static final int person_header_circle=0x7f020003;
+        public static final int scrollbar_handle_holo_dark=0x7f020004;
+        public static final int scrollbar_handle_holo_light=0x7f020005;
+>>>>>>> e88a3d62ccc71778191b053326b4db9669dd3600
 =======
         public static final int person_header_circle=0x7f020003;
         public static final int scrollbar_handle_holo_dark=0x7f020004;

@@ -2,7 +2,7 @@ package com.example.intelligencetest;
 
 import java.util.Locale;
 
-import com.example.scanner.GridMenu;
+import com.example.intelligencetest.persons.PersonFragmentTest;
 import com.example.scanner.Scan;
 
 import android.app.ActionBar;
@@ -59,6 +59,7 @@ public class MainActivity extends FragmentActivity implements
 
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
+		mViewPager.setOffscreenPageLimit(3);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 
 		// When swiping between different sections, select the corresponding
@@ -129,7 +130,7 @@ public class MainActivity extends FragmentActivity implements
 				fragment = new PersonFragmentTest();
 			}
 			else if(position == 1) {
-				fragment = new GridMenu();
+				fragment = new Scan();
 			}else {				
 				fragment = new DummySectionFragment();
 			}

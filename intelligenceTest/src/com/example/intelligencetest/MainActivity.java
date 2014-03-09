@@ -3,7 +3,10 @@ package com.example.intelligencetest;
 import java.util.Locale;
 
 import com.example.intelligencetest.persons.PersonFragmentTest;
+<<<<<<< HEAD
 import com.example.scanner.GridMenu;
+=======
+>>>>>>> e88a3d62ccc71778191b053326b4db9669dd3600
 import com.example.scanner.Scan;
 
 import android.app.ActionBar;
@@ -60,6 +63,7 @@ public class MainActivity extends FragmentActivity implements
 
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
+		mViewPager.setOffscreenPageLimit(3);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 		mViewPager.setOffscreenPageLimit(3);
 

@@ -13,6 +13,11 @@ import com.example.intelligencetest.R.id;
 import com.example.intelligencetest.R.layout;
 
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnDismissListener;
+import android.os.AsyncTask;
+import android.os.AsyncTask.Status;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -27,13 +32,15 @@ import android.widget.TextView;
 public class PersonFragmentTest extends Fragment {	
 	public static String LOGTAG = "PersonFragment";
 	
-	
+	MyAdapter adapter = new MyAdapter();
 	Locale locale = Locale.getDefault();
-	
+	Boolean finished;
 	List<Person> personList = new ArrayList<Person>();		
 	List<Character> sections;
 	PersonDatasource persondata;
 	Person[][] personArray;
+	ProgressDialog pDialog;
+	HeaderListView list;
 	
 	public PersonFragmentTest() {
 	}
@@ -41,24 +48,47 @@ public class PersonFragmentTest extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		int counter = 0;
-		Log.i(LOGTAG, "onCreateView : " + counter++);
 		
 		persondata = new PersonDatasource();
-		sections = persondata.getSections();
+		list = new HeaderListView(getActivity());
 
-		
-		personArray = persondata.getPersonArray();
-		
-		HeaderListView list = new HeaderListView(getActivity());
-		list.setAdapter(new MyAdapter());
-		
-		
-		
+		DatabaseOperation dbOper = new DatabaseOperation();
+		dbOper.execute();
+				
 		return list;
 	}
 	
+	public class DatabaseOperation extends AsyncTask<String, Void, String> {
 
+		@Override
+		protected String doInBackground(String... params) {
+			persondata.getData();
+			return "Executed";
+		}
+		
+		@Override
+		protected void onPostExecute(String result) {
+			// TODO Auto-generated method stub
+			super.onPostExecute(result);
+			sections = persondata.getSections();
+			personArray = persondata.getPersonArray();		
+			pDialog.dismiss();
+			list.setAdapter(adapter);
+		}
+		
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();			
+            pDialog = new ProgressDialog(getActivity());
+            pDialog.setMessage("Oppdaterer personlist...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();
+		}
+		
+		
+	}
+	
 	public class MyAdapter extends SectionAdapter {
 		
 		

@@ -8,25 +8,27 @@ public class Person {
 	String position;
 	String img;
 	String phone;
-	int isOnline;
+	String email;
+	int id;
 
 
-	public Person(String firstname, String lastname, int isOnline,
+	public Person(int id, String firstname, String lastname, String email,
 			String img, String phone) {
+		this.id = id;
 		this.firstname = firstname;
 		this.lastname = lastname;
-		this.position = position;
 		this.img = img;
 		this.phone = phone;
-		this.isOnline = isOnline;
+		this.email = email;
 		
 	}
-	public int getIsOnline() {
-		return isOnline;
+
+	public int getId() {
+		return id;
 	}
-	
-	public void setIsOnline(int isOnline) {
-		this.isOnline = isOnline;
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public String getLastname() {

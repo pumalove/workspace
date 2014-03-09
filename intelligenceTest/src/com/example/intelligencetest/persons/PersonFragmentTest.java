@@ -48,22 +48,13 @@ public class PersonFragmentTest extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		finished = false;
 		
 		persondata = new PersonDatasource();
-		
-		
+		list = new HeaderListView(getActivity());
+
 		DatabaseOperation dbOper = new DatabaseOperation();
 		dbOper.execute();
-		
-//		
-//		sections = persondata.getSections();
-//		personArray = persondata.getPersonArray();
-		
-		list = new HeaderListView(getActivity());
-		//list.setAdapter(adapter);
-		
-		
+				
 		return list;
 	}
 	
@@ -79,11 +70,10 @@ public class PersonFragmentTest extends Fragment {
 		protected void onPostExecute(String result) {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
-				pDialog.dismiss();
-				sections = persondata.getSections();
-				personArray = persondata.getPersonArray();
-				list.setAdapter(adapter);
-				//adapter.notifyDataSetChanged();
+			sections = persondata.getSections();
+			personArray = persondata.getPersonArray();		
+			pDialog.dismiss();
+			list.setAdapter(adapter);
 		}
 		
 		@Override

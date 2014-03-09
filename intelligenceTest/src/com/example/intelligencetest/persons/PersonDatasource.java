@@ -54,7 +54,6 @@ public class PersonDatasource  {
 
 	public List<Character> getSections() {
 		sections = new ArrayList<Character>();
-		Log.i(LOGTAG, "Number of persons to create sections: " + personList.size());
 		
 		for(int a = 0; a < alphabet.length; a++) {
 			for(Person p : personList) {
@@ -78,6 +77,7 @@ public class PersonDatasource  {
 				counter++;
 			}
 		}
+		
 		if(counter > largestCount) {
 			largestCount = counter;
 			counter = 0;

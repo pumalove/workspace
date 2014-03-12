@@ -7,11 +7,17 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+<<<<<<< HEAD
 import android.webkit.WebView;
+=======
+import android.view.View.OnClickListener;
+import android.widget.Button;
+>>>>>>> Kristian
 import android.widget.Toast;
 import com.dm.zbar.android.scanner.ZBarConstants;
 import com.dm.zbar.android.scanner.ZBarScannerActivity;
 import com.example.intelligencetest.R;
+import com.example.intelligencetest.chemical.ChemicalActivity;
 
 import net.sourceforge.zbar.Symbol;
 
@@ -24,6 +30,15 @@ public class ScanActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        Button b = (Button) findViewById(R.id.scan_btn);
+        b.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startNewActivity();
+				
+			}
+		});
     }
 
     public void launchScanner(View v) {
@@ -52,13 +67,20 @@ public class ScanActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
+        String result;
+		switch (requestCode) {
             case ZBAR_SCANNER_REQUEST:
             case ZBAR_QR_SCANNER_REQUEST:
                 if (resultCode == RESULT_OK) {
+<<<<<<< HEAD
                     Toast.makeText(this, "Scan Result = " + data.getStringExtra(ZBarConstants.SCAN_RESULT), Toast.LENGTH_SHORT).show();
                   
                    
+=======
+                	result = data.getStringExtra(ZBarConstants.SCAN_RESULT);
+                    Toast.makeText(this, "Scan Result = " + result, Toast.LENGTH_SHORT).show();
+                    startNewActivity();
+>>>>>>> Kristian
                     
                 } else if(resultCode == RESULT_CANCELED && data != null) {
                     String error = data.getStringExtra(ZBarConstants.ERROR_INFO);
@@ -68,5 +90,12 @@ public class ScanActivity extends Activity {
                 }
                 break;
         }
+    }
+    
+    private void startNewActivity() {
+    	Log.i("LOGTAG", "startnewActivity() yoloswag kj¿res");
+    	Intent newChemical = new Intent(this, ChemicalActivity.class);
+        newChemical.putExtra("id", "hello");
+        startActivity(newChemical);
     }
 }

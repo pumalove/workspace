@@ -17,18 +17,36 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+<<<<<<< HEAD
 import android.net.ParseException;
 import android.util.Log;
+=======
+import android.app.ProgressDialog;
+import android.net.ParseException;
+import android.os.AsyncTask;
+import android.os.StrictMode;
+import android.util.JsonReader;
+import android.util.Log;
+import android.widget.Toast;
+>>>>>>> Kristian
 
 public class PersonDatasource  {
 	
 	//json node names
+<<<<<<< HEAD
 	//private static final String TAG_PERSONS = "persons";
+=======
+	private static final String TAG_PERSONS = "persons";
+>>>>>>> Kristian
 	
 	
 	private static final String LOGTAG = "PersonDataSource";
 	List<Person> personList = new ArrayList<Person>();
+<<<<<<< HEAD
 	char[] alphabet = "abcdefghijklmnopqrstuvwxyzÃ¦Ã¸Ã¥".toCharArray();
+=======
+	char[] alphabet = "abcdefghijklmnopqrstuvwxyz¾¿Œ".toCharArray();
+>>>>>>> Kristian
 	List<Character> sections;
 	
 	public PersonDatasource() {

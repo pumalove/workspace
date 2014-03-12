@@ -2,6 +2,12 @@ package com.example.intelligencetest;
 
 import java.util.Locale;
 
+<<<<<<< HEAD
+=======
+import com.example.intelligencetest.persons.PersonFragmentTest;
+import com.example.scanner.Scan;
+
+>>>>>>> Kristian
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.os.Bundle;

@@ -11,6 +11,7 @@ public final class R {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		public static final int scrollbar_handle_holo_dark = 0x7f020004;
 		public static final int scrollbar_handle_holo_light = 0x7f020005;
 =======
@@ -47,5 +48,9 @@ public final class R {
 >>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
+=======
+		public static final int scrollbar_handle_holo_dark = 0x7f020008;
+		public static final int scrollbar_handle_holo_light = 0x7f020009;
+>>>>>>> Kristian
 	}
 }

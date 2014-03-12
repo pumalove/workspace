@@ -4,10 +4,12 @@ public class Chemical {
 
 	String name;
 	String type; //liquid - //gas
+	String emergencyPhone;
 	
-	public Chemical(String name, String type) {
+	public Chemical(String name, String type, String emergencyPhone) {
 		this.name = name;
 		this.type = type;
+		this.emergencyPhone = emergencyPhone;
 	}
 	
 	public String getName() {
@@ -24,6 +26,14 @@ public class Chemical {
 	
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getEmergencyPhone() {
+		return emergencyPhone;
+	}
+
+	public void setEmergencyPhone(String emergencyPhone) {
+		this.emergencyPhone = emergencyPhone;
 	}
 	
 	

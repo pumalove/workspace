@@ -1,0 +1,49 @@
+﻿Merge branch 'new_master_j' into Kristian2
+
+Conflicts:
+	intelligenceTest/gen/com/applidium/headerlistview/R.java
+	intelligenceTest/gen/com/example/intelligencetest/R.java
+	intelligenceTest/src/com/example/intelligencetest/MainActivity.java
+	intelligenceTest/src/com/example/intelligencetest/chemical/Chemical.java
+	intelligenceTest/src/com/example/intelligencetest/chemical/ChemicalDatasource.java
+	intelligenceTest/src/com/example/intelligencetest/persons/PersonDatasource.java
+	intelligenceTest/src/com/example/intelligencetest/persons/PersonFragmentTest.java
+	intelligenceTest/src/com/example/scanner/ScanActivity.java
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch Kristian2
+# All conflicts fixed but you are still merging.
+#   (use "git commit" to conclude merge)
+#
+# Changes to be committed:
+#
+#	modified:   intelligenceTest/gen/com/applidium/headerlistview/R.java
+#	modified:   intelligenceTest/gen/com/example/intelligencetest/R.java
+#	new file:   intelligenceTest/res/drawable/sample_0.jpg
+#	new file:   intelligenceTest/res/drawable/sample_1.jpg
+#	new file:   intelligenceTest/res/drawable/sample_2.jpg
+#	new file:   intelligenceTest/res/drawable/sample_3.jpg
+#	new file:   intelligenceTest/res/drawable/sample_4.jpg
+#	new file:   intelligenceTest/res/drawable/sample_5.jpg
+#	new file:   intelligenceTest/res/drawable/sample_6.jpg
+#	new file:   intelligenceTest/res/drawable/sample_7.jpg
+#	new file:   intelligenceTest/res/layout/gridview.xml
+#	new file:   intelligenceTest/res/layout/gridview_item.xml
+#	modified:   intelligenceTest/src/com/example/intelligencetest/MainActivity.java
+#	modified:   intelligenceTest/src/com/example/intelligencetest/chemical/Chemical.java
+#	modified:   intelligenceTest/src/com/example/intelligencetest/chemical/ChemicalDatasource.java
+#	modified:   intelligenceTest/src/com/example/intelligencetest/persons/PersonDatasource.java
+#	modified:   intelligenceTest/src/com/example/intelligencetest/persons/PersonFragmentTest.java
+#	new file:   intelligenceTest/src/com/example/scanner/GridMenu.java
+#	modified:   intelligenceTest/src/com/example/scanner/ScanActivity.java
+#	new file:   intelligenceTest/src/com/example/scanner/SquareImageView.java
+#	new file:   tu20h0mo.zrs.txt
+#
+

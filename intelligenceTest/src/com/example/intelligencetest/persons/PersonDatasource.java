@@ -18,20 +18,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import android.net.ParseException;
 import android.util.Log;
-import android.app.ProgressDialog;
-import android.net.ParseException;
-import android.os.AsyncTask;
-import android.os.StrictMode;
-import android.util.JsonReader;
-import android.util.Log;
-import android.widget.Toast;
 
 
 public class PersonDatasource  {
 	
-	//json node names
-
-	private static final String TAG_PERSONS = "persons";
 	
 	
 	private static final String LOGTAG = "PersonDataSource";
@@ -40,7 +30,7 @@ public class PersonDatasource  {
 	List<Character> sections;
 	
 	public PersonDatasource() {
-		//personList.add(new Person(100, "Kristian","Storvoll","email","img","91799756"));
+		
 	}
 
 	

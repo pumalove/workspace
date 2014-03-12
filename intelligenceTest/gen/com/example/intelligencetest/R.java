@@ -27,6 +27,7 @@ public final class R {
         public static final int ic_contact_picture=0x7f020001;
         public static final int ic_launcher=0x7f020002;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int person_header_circle=0x7f020003;
         public static final int scrollbar_handle_holo_dark=0x7f020004;
         public static final int scrollbar_handle_holo_light=0x7f020005;
@@ -51,6 +52,8 @@ public final class R {
 =======
 >>>>>>> FETCH_HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> FETCH_HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         public static final int sample_0=0x7f020003;
@@ -127,6 +130,9 @@ public final class R {
         public static final int section_label=0x7f090001;
 >>>>>>> d11b5cf7e78d853370b2a949bbee02a9f2c2b260
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
@@ -153,6 +159,9 @@ public final class R {
         public static final int simple_list_item_1=0x7f030007;
 >>>>>>> d11b5cf7e78d853370b2a949bbee02a9f2c2b260
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD

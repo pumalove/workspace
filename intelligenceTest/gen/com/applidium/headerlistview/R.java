@@ -10,6 +10,7 @@ public final class R {
 	public static final class drawable {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		public static final int scrollbar_handle_holo_dark = 0x7f020004;
 		public static final int scrollbar_handle_holo_light = 0x7f020005;
 =======
@@ -17,6 +18,8 @@ public final class R {
 =======
 >>>>>>> FETCH_HEAD
 <<<<<<< HEAD
+=======
+>>>>>>> FETCH_HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 		public static final int scrollbar_handle_holo_dark = 0x7f02000b;
@@ -38,6 +41,9 @@ public final class R {
 		public static final int scrollbar_handle_holo_light = 0x7f020009;
 >>>>>>> d11b5cf7e78d853370b2a949bbee02a9f2c2b260
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD

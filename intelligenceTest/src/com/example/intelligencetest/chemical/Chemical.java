@@ -1,10 +1,15 @@
 package com.example.intelligencetest.chemical;
 
 public class Chemical {
-
+	
+	String chemicalId;
 	String name;
 	String type; //liquid - //gas
 	String emergencyPhone;
+	
+	
+	
+	
 	
 	public Chemical(String name, String type, String emergencyPhone) {
 		this.name = name;
@@ -12,6 +17,14 @@ public class Chemical {
 		this.emergencyPhone = emergencyPhone;
 	}
 	
+	public String getChemicalId() {
+		return chemicalId;
+	}
+
+	public void setChemicalId(String chemicalId) {
+		this.chemicalId = chemicalId;
+	}
+
 	public String getName() {
 		return name;
 	}

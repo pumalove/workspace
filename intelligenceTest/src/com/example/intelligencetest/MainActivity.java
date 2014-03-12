@@ -2,12 +2,8 @@ package com.example.intelligencetest;
 
 import java.util.Locale;
 
-<<<<<<< HEAD
-=======
-import com.example.intelligencetest.persons.PersonFragmentTest;
-import com.example.scanner.Scan;
 
->>>>>>> Kristian
+import com.example.intelligencetest.persons.PersonFragmentTest;
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -21,8 +17,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.example.intelligencetest.persons.PersonFragmentTest;
 import com.example.scanner.GridMenu;
 
 public class MainActivity extends FragmentActivity implements

@@ -36,6 +36,7 @@ public class ChemicalActivity extends Activity {
 		
 		TextView tvName = (TextView) findViewById(R.id.chemical_name);
 		tvName.setText(chemical.getName());
+		//yolo
 		
 	}
 }

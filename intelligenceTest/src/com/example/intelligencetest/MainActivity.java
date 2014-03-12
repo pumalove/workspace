@@ -3,6 +3,16 @@ package com.example.intelligencetest;
 import java.util.Locale;
 
 import com.example.intelligencetest.persons.PersonFragmentTest;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+import com.example.scanner.GridMenu;
+=======
+>>>>>>> e88a3d62ccc71778191b053326b4db9669dd3600
+=======
+>>>>>>> e88a3d62ccc71778191b053326b4db9669dd3600
+=======
+>>>>>>> e88a3d62ccc71778191b053326b4db9669dd3600
 import com.example.scanner.Scan;
 
 import android.app.ActionBar;
@@ -61,6 +71,7 @@ public class MainActivity extends FragmentActivity implements
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setOffscreenPageLimit(3);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
+		mViewPager.setOffscreenPageLimit(3);
 
 		// When swiping between different sections, select the corresponding
 		// tab. We can also use ActionBar.Tab#select() to do this if we have
@@ -130,7 +141,7 @@ public class MainActivity extends FragmentActivity implements
 				fragment = new PersonFragmentTest();
 			}
 			else if(position == 1) {
-				fragment = new Scan();
+				fragment = new GridMenu();
 			}else {				
 				fragment = new DummySectionFragment();
 			}

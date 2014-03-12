@@ -27,7 +27,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-
+//Jørgen
 
 public class PersonFragmentTest extends Fragment {	
 	public static String LOGTAG = "PersonFragment";

@@ -11,6 +11,7 @@ public final class R {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		public static final int scrollbar_handle_holo_dark = 0x7f02000b;
 		public static final int scrollbar_handle_holo_light = 0x7f02000c;
 =======
@@ -25,5 +26,9 @@ public final class R {
 		public static final int scrollbar_handle_holo_dark = 0x7f020004;
 		public static final int scrollbar_handle_holo_light = 0x7f020005;
 >>>>>>> e88a3d62ccc71778191b053326b4db9669dd3600
+=======
+		public static final int scrollbar_handle_holo_dark = 0x7f020008;
+		public static final int scrollbar_handle_holo_light = 0x7f020009;
+>>>>>>> d11b5cf7e78d853370b2a949bbee02a9f2c2b260
 	}
 }

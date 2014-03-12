@@ -17,18 +17,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.ProgressDialog;
 import android.net.ParseException;
-import android.os.AsyncTask;
-import android.os.StrictMode;
-import android.util.JsonReader;
 import android.util.Log;
-import android.widget.Toast;
 
 public class PersonDatasource  {
 	
 	//json node names
-	private static final String TAG_PERSONS = "persons";
+	//private static final String TAG_PERSONS = "persons";
 	
 	
 	private static final String LOGTAG = "PersonDataSource";

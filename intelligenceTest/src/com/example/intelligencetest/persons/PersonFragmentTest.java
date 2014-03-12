@@ -3,29 +3,20 @@ package com.example.intelligencetest.persons;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
-import java.util.TreeMap;
-
-import com.applidium.headerlistview.HeaderListView;
-import com.applidium.headerlistview.SectionAdapter;
-import com.example.intelligencetest.R;
-import com.example.intelligencetest.R.id;
-import com.example.intelligencetest.R.layout;
-
 
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnDismissListener;
 import android.os.AsyncTask;
-import android.os.AsyncTask.Status;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import com.applidium.headerlistview.HeaderListView;
+import com.applidium.headerlistview.SectionAdapter;
+import com.example.intelligencetest.R;
 
 //Jørgen
 

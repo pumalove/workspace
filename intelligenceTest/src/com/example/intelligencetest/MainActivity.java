@@ -2,12 +2,6 @@ package com.example.intelligencetest;
 
 import java.util.Locale;
 
-import com.example.intelligencetest.persons.PersonFragmentTest;
-
-import com.example.scanner.GridMenu;
-
-import com.example.scanner.Scan;
-
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -16,16 +10,14 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-
-
 import android.view.LayoutInflater;
 import android.view.Menu;
-
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.intelligencetest.persons.PersonFragmentTest;
+import com.example.scanner.GridMenu;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {

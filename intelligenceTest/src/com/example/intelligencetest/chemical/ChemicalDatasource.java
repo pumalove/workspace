@@ -4,7 +4,6 @@ public class ChemicalDatasource {
 	
 	Chemical chemical;
 	public ChemicalDatasource() {
-
 		chemical = new Chemical("Formidor", "Liquid", "+47 815 49 300");
 	}
 	

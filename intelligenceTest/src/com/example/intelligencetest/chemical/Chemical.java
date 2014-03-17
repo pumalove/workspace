@@ -11,10 +11,7 @@ public class Chemical {
 	
 	
 	
-	public Chemical(String name, String type, String emergencyPhone) {
-		this.name = name;
-		this.type = type;
-		this.emergencyPhone = emergencyPhone;
+	public Chemical() {
 	}
 	
 	public String getChemicalId() {

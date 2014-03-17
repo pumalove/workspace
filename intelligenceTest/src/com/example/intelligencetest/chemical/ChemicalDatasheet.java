@@ -1,5 +1,8 @@
 package com.example.intelligencetest.chemical;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class ChemicalDatasheet {
 	
 	String chemicalId;
@@ -31,6 +34,29 @@ public class ChemicalDatasheet {
 	String[] hazardSymbolsDescription;
 	String[] hazardSymbolIconLink;
 	
+	
+	public void setDataFromJSON(JSONObject json_data) {
+		try {
+			this.chemicalId = json_data.getString("chem_id");
+			this.revisionDate = json_data.getString("revision_date");
+			this.pdfAddress = json_data.getString("pdf");
+			this.producerId = json_data.getString("producer_id");
+			this.producerName = json_data.getString("producer_name");
+			this.containtmentAndCleaning = json_data.getString("containment_and_cleaning");
+			this.environmentalPrecatuions = json_data.getString("environmental_precatuions");
+			this.fireFightingExtinguishingMedia = json_data.getString("extinguishing_media");
+			this.fireFightingSpecialHazards = json_data.getString("special_hazards");
+			this.fireFightingAdvice = json_data.getString("firefighting_advice");
+			this.firstAidIfInhaled = json_data.getString("ifinhaled");
+			this.firstAidOnSkinContact = json_data.getString("onskincontact");
+			this.firstAidOnEyeContact = json_data.getString("oneyecontact");
+			this.firstAidOnIngestion = json_data.getString("oningestion");
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	public String getChemicalId() {
 		return chemicalId;

@@ -20,8 +20,6 @@ import org.json.JSONObject;
 import android.net.ParseException;
 import android.util.Log;
 
-import com.example.intelligencetest.persons.Person;
-
 public class ChemicalDatasource {
 	
 	private static final String LOGTAG = "ChemicalDatasource";
@@ -50,7 +48,7 @@ public class ChemicalDatasource {
 			 nameValuePairs.add(new BasicNameValuePair("chemid", id.trim()));
 			 HttpClient httpclient = new DefaultHttpClient();
 			 
-			 HttpPost httppost = new HttpPost("http://home.uia.no/jorgel11/ICA/getAllChemInfo.php?chemid=3");
+			 HttpPost httppost = new HttpPost("http://home.uia.no/jorgel11/ICA/getAllChemInfo.php");
 			 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 			 HttpResponse response = httpclient.execute(httppost);
 			 HttpEntity entity = response.getEntity();
@@ -84,6 +82,7 @@ public class ChemicalDatasource {
 	      for(int i=0;i<jArray.length();i++){
 	    	  json_data = jArray.getJSONObject(i);
 	          	createChemicalFromJSON(json_data);
+	          	createDatasheetFromJSON(json_data);
 	          	
 	         }
 	      }
@@ -97,32 +96,37 @@ public class ChemicalDatasource {
 	}
 	
 	
+	public ChemicalDatasheet getCurrentDatasheet() {
+		return currentDatasheet;
+	}
+	
 	private void createDatasheetFromJSON(JSONObject json_data) {
 		currentDatasheet = new ChemicalDatasheet();
 		
 		try {
 			currentDatasheet.setChemicalId(json_data.getString("chem_id"));
 			currentDatasheet.setRevisionDate(json_data.getString("revision_date"));
-			currentDatasheet.setChemicalId(json_data.getString("pdf"));
-			currentDatasheet.setChemicalId(json_data.getString("producer_id"));
+			currentDatasheet.setPdfAddress(json_data.getString("pdf"));
+			currentDatasheet.setProducerName(json_data.getString("producer_name"));
+			
+			//add producer location
+			//add producer phone
+			//add producer email
+		
+			currentDatasheet.setContaintmentAndCleaning(json_data.getString("containment_and_cleaning"));
+			currentDatasheet.setEnvironmentalPrecatuions(json_data.getString("environmental_precatuions"));	
+			currentDatasheet.setFireFightingExtinguishingMedia(json_data.getString("extinguishing_media"));
+			currentDatasheet.setFireFightingSpecialHazards(json_data.getString("special_hazards"));
+			currentDatasheet.setFireFightingAdvice(json_data.getString("firefighting_advice"));
+			currentDatasheet.setFirstAidIfInhaled(json_data.getString("ifinhaled"));
+			currentDatasheet.setFirstAidOnSkinContact(json_data.getString("onskincontact"));
+			currentDatasheet.setFirstAidOnEyeContact(json_data.getString("oneyecontact"));
+			currentDatasheet.setFirstAidOnIngestion(json_data.getString("oningestion"));
+			Log.i(LOGTAG, "Datasheet created for chemical: " + currentChemical.getName());
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		/*
-		this.revisionDate = json_data.getString("revision_date");
-		this.pdfAddress = json_data.getString("pdf");
-		this.producerId = json_data.getString("producer_id");
-		this.producerName = json_data.getString("producer_name");
-		this.containtmentAndCleaning = json_data.getString("containment_and_cleaning");
-		this.environmentalPrecatuions = json_data.getString("environmental_precatuions");
-		this.fireFightingExtinguishingMedia = json_data.getString("extinguishing_media");
-		this.fireFightingSpecialHazards = json_data.getString("special_hazards");
-		this.fireFightingAdvice = json_data.getString("firefighting_advice");
-		this.firstAidIfInhaled = json_data.getString("ifinhaled");
-		this.firstAidOnSkinContact = json_data.getString("onskincontact");
-		this.firstAidOnEyeContact = json_data.getString("oneyecontact");
-		this.firstAidOnIngestion = json_data.getString("oningestion");*/
 	}
 	
 	private void createChemicalFromJSON(JSONObject json_data) {

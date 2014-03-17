@@ -27,14 +27,7 @@ public class ScanActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         Button b = (Button) findViewById(R.id.scan_btn);
-        b.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				startNewActivity();
-				
-			}
-		});
+ 
     }
 
     public void launchScanner(View v) {
@@ -68,11 +61,11 @@ public class ScanActivity extends Activity {
             case ZBAR_SCANNER_REQUEST:
             case ZBAR_QR_SCANNER_REQUEST:
                 if (resultCode == RESULT_OK) {
-                    Toast.makeText(this, "Scan Result = " + data.getStringExtra(ZBarConstants.SCAN_RESULT), Toast.LENGTH_SHORT).show();
-
                 	result = data.getStringExtra(ZBarConstants.SCAN_RESULT);
                     Toast.makeText(this, "Scan Result = " + result, Toast.LENGTH_SHORT).show();
-                    startNewActivity();
+                    Intent newChemical = new Intent(this, ChemicalActivity.class);
+                    newChemical.putExtra("id", result);
+                    startActivity(newChemical);
                     
                 } else if(resultCode == RESULT_CANCELED && data != null) {
                     String error = data.getStringExtra(ZBarConstants.ERROR_INFO);
@@ -83,11 +76,5 @@ public class ScanActivity extends Activity {
                 break;
         }
     }
-    
-    private void startNewActivity() {
-    	Log.i("LOGTAG", "startnewActivity() yoloswag kj¿res");
-    	Intent newChemical = new Intent(this, ChemicalActivity.class);
-        newChemical.putExtra("id", "hello");
-        startActivity(newChemical);
-    }
+
 }

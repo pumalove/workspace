@@ -49,6 +49,16 @@
             </intent-filter>
             
         </activity>
+        
+        <activity
+            android:name="com.example.intelligencetest.chemical.ShowFirstaidMeasures">
+            <intent-filter>
+                <action android:name="android.intent.action.SHOWFIRSTAIDMEASURES" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            
+        </activity>
       
     </application>
 

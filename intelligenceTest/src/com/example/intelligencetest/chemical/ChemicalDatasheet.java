@@ -13,6 +13,9 @@ public class ChemicalDatasheet {
 	//producer
 	String producerId;
 	String producerName;
+	String producerEmail;
+	String producerPhone;
+	String producerLocation;
 	
 	//general
 	String containmentAndCleaning;
@@ -119,6 +122,24 @@ public class ChemicalDatasheet {
 	}
 	public void setFirstAidOnIngestion(String firstAidOnIngestion) {
 		this.firstAidOnIngestion = firstAidOnIngestion;
+	}
+	public String getProducerEmail() {
+		return producerEmail;
+	}
+	public String getProducerPhone() {
+		return producerPhone;
+	}
+	public String getProducerLocation() {
+		return producerLocation;
+	}
+	public void setProducerEmail(String producerEmail) {
+		this.producerEmail = producerEmail;
+	}
+	public void setProducerPhone(String producerPhone) {
+		this.producerPhone = producerPhone;
+	}
+	public void setProducerLocation(String producerLocation) {
+		this.producerLocation = producerLocation;
 	}
 
 		

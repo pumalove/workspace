@@ -108,11 +108,9 @@ public class ChemicalDatasource {
 			currentDatasheet.setRevisionDate(json_data.getString("revision_date"));
 			currentDatasheet.setPdfAddress(json_data.getString("pdf"));
 			currentDatasheet.setProducerName(json_data.getString("producer_name"));
-			
-			//add producer location
-			//add producer phone
-			//add producer email
-		
+			currentDatasheet.setProducerEmail(json_data.getString("producer_email"));
+			currentDatasheet.setProducerLocation(json_data.getString("producer_location"));
+			currentDatasheet.setProducerPhone(json_data.getString("producer_phone"));
 			currentDatasheet.setContaintmentAndCleaning(json_data.getString("containment_and_cleaning"));
 			currentDatasheet.setEnvironmentalPrecatuions(json_data.getString("environmental_precatuions"));	
 			currentDatasheet.setFireFightingExtinguishingMedia(json_data.getString("extinguishing_media"));

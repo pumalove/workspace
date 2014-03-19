@@ -39,6 +39,7 @@
                 android:gravity="center"/>
 
             <TextView
+                android:id="@+id/tvpdf"
                 android:layout_height="match_parent"
                 android:clickable="true"
                 android:background="@drawable/layout_selector"

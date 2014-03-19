@@ -8,7 +8,7 @@
 	<RelativeLayout 
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:background="@color/firstaid_green"
+		android:background="@color/fire_red"
 		android:gravity="center">
 
 	    <ImageView
@@ -18,7 +18,7 @@
 	        android:layout_marginTop="5dp"
 	        android:layout_marginBottom="5dp"
 	        
-	        android:src="@drawable/firstaid_fixed" />
+	        android:src="@drawable/firefighting_fixed" />
 	    
 	</RelativeLayout>
 
@@ -34,14 +34,14 @@
         <TextView 
             android:layout_width="fill_parent" 
             android:layout_height="wrap_content"
-            android:text="On Skin Contact:"
-            android:textColor="@color/firstaid_green"
+            android:text="Extinguishing Media"
+            android:textColor="@color/fire_red"
             android:layout_marginBottom="2dp"
             android:layout_marginTop="5dp"/>
 
         
         <TextView
-            android:id="@+id/firstaid_onSkinContact"
+            android:id="@+id/firefighting_extMedia"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
         	android:layout_marginBottom="2dp"/>        
@@ -58,14 +58,14 @@
         <TextView 
             android:layout_width="fill_parent" 
             android:layout_height="wrap_content"
-            android:text="On Eye Contact:"
-            android:textColor="@color/firstaid_green"
+            android:text="Special Hazards:"
+            android:textColor="@color/fire_red"
             android:layout_marginBottom="2dp"
             android:layout_marginTop="5dp"/>
 
         
         <TextView
-            android:id="@+id/firstaid_onEyeContact"
+            android:id="@+id/firefighting_specialHazards"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
         	android:layout_marginBottom="2dp"/>        
@@ -82,42 +82,20 @@
         <TextView 
             android:layout_width="fill_parent" 
             android:layout_height="wrap_content"
-            android:text="On Ingestion"
-            android:textColor="@color/firstaid_green"
+            android:text="General Advice"
+            android:textColor="@color/fire_red"
             android:layout_marginBottom="2dp"
             android:layout_marginTop="5dp"/>
 
         
         <TextView
-            android:id="@+id/firstaid_oningestion"
+            android:id="@+id/firefighting_advice"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
         	android:layout_marginBottom="2dp"/>        
         </LinearLayout>
         
-      <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:orientation="vertical"
-        android:layout_marginBottom="10dp"
-        android:paddingLeft="5dp">
-	    
-        <TextView 
-            android:layout_width="fill_parent" 
-            android:layout_height="wrap_content"
-            android:text="If Inhaled"
-            android:textColor="@color/firstaid_green"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="5dp"/>
 
-        
-        <TextView
-            android:id="@+id/firstaid_ifInhaled"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-        	android:layout_marginBottom="2dp"/>        
-        </LinearLayout>
     
     
      

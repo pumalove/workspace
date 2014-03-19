@@ -51,7 +51,8 @@
         </activity>
         
         <activity
-            android:name="com.example.intelligencetest.chemical.ShowFirstaidMeasures">
+            android:name="com.example.intelligencetest.chemical.ui.ShowFirstaidMeasures"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.SHOWFIRSTAIDMEASURES" />
 

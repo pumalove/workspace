@@ -1,0 +1,10 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item style="@style/CustomButtonPressed"
+          android:state_pressed="true" />
+    
+    <item style="@style/CustomButtonFocused"
+          android:state_focused="true" />
+    
+    <item style="@style/CustomButton" />
+</selector>
